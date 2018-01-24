@@ -2,7 +2,7 @@ var Bank = function() {
   this.accounts = [];
 }
 
-Bank.prototype.numberOfAccounts= function() {
+Bank.prototype.numberOfAccounts = function() {
   return this.accounts.length;
 }
 
@@ -13,7 +13,7 @@ Bank.prototype.addAccount = function(account) {
 Bank.prototype.findAccountByName = function(name) {
   for (account of this.accounts) {
     if (account.owner_name === name) {
-      return name;
+      return account;
     }
   }
 };
@@ -25,5 +25,9 @@ Bank.prototype.findTotalValue = function() {
   }
   return totalValue;
 };
+
+Bank.prototype.findAverageValue = function() {
+  return this.findTotalValue()/this.numberOfAccounts();
+}
 
 module.exports = Bank;

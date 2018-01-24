@@ -10,7 +10,7 @@ describe ('Bank', function () {
 
   beforeEach(function(){
     bank = new Bank();
-    account1 = new Account("current", "John Snow", 1000);
+    account1 = new Account("current", "John Snow", 1500);
     account2 = new Account("savings", "Jane Snow", 10000);
     account3 = new Account("current", "Jim Morrison", 500);
     bank.addAccount(account1);
@@ -29,11 +29,15 @@ xit('can add account to bank', function (){
 });
 
 it('can get account by name', function (){
-  assert.strictEqual(bank.findAccountByName("John Snow"), "John Snow");
+  assert.strictEqual(bank.findAccountByName("John Snow"), account1);
 });
 
 it('find total account value', function (){
-  assert.strictEqual(bank.findTotalValue(), 11500);
+  assert.strictEqual(bank.findTotalValue(), 12000);
+});
+
+it('find average account value', function (){
+  assert.strictEqual(bank.findAverageValue(), 4000);
 });
 
 });
