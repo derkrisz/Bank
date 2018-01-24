@@ -44,4 +44,8 @@ it('find total value for one account type', function (){
   assert.strictEqual(bank.findTotalValueForType("current"), 2000);
 });
 
+it('find largest account', function(){
+  assert.strictEqual(bank.findLargestAccount(), account2);
+});
+
 });
