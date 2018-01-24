@@ -28,6 +28,16 @@ Bank.prototype.findTotalValue = function() {
 
 Bank.prototype.findAverageValue = function() {
   return this.findTotalValue()/this.numberOfAccounts();
-}
+};
+
+Bank.prototype.findTotalValueForType = function(type) {
+  var totalByType = 0;
+  for (var i = 0; i < this.accounts.length; i++) {
+    if (this.accounts[i].type === type) {
+      totalByType += this.accounts[i].amount;
+    }
+  }
+  return totalByType;
+};
 
 module.exports = Bank;

@@ -40,4 +40,8 @@ it('find average account value', function (){
   assert.strictEqual(bank.findAverageValue(), 4000);
 });
 
+it('find total value for one account type', function (){
+  assert.strictEqual(bank.findTotalValueForType("current"), 2000);
+});
+
 });
